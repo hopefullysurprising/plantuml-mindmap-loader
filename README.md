@@ -4,9 +4,11 @@
 
 This plugin allows importing **PlantUML mind map diagrams** as JS objects with [webpack](https://webpack.js.org). Instead of parsing the diagrams at runtime, the diagrams are parsed at build time and the resulting JS objects are bundled with the rest of the code.
 
+The story of creation of this plugin is described in the blog post: [Medium](https://hopefullysurprising.medium.com/building-a-typescript-compatible-webpack-loader-a-plantuml-mind-map-example-c0b3ec9bc033), [dev.to](https://dev.to/hopefully_surprising/building-a-typescript-compatible-webpack-loader-a-plantuml-mind-map-example-49jl), [personal blog](https://hopefullysurprising.com/custom-webpack-loader-plantuml-mindmap/).
+
 ## IMPORTANT
 
-This package is not implementing the entire variety of PlantUML diagrams. It is only implementing the basic use of mindmap diagram.
+This package is not implementing the entire variety of PlantUML diagrams. It only implements the basic use of mindmap diagram - OrgMode syntax.
 
 See OrgMode syntax in official [PlantUML documentation](https://plantuml.com/mindmap-diagram).
 
