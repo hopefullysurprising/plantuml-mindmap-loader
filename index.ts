@@ -8,10 +8,10 @@ interface LoaderProperties {
 }
 
 const schema = {
-  type: 'object' as 'object', // `as` is for making the type match `JSONSchema7`
+  type: 'object' as const,
   properties: {
     test: {
-      type: 'string' as 'string',  // `as` is for making the type match `JSONSchema7`
+      type: 'string' as const,
     },
   },
 };

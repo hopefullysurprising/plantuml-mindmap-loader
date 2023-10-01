@@ -1,0 +1,6 @@
+{
+  "sonarlint.connectedMode.project": {
+    "connectionId": "localSonarQubeForPlantumlMindmapLoader",
+    "projectKey": "plantuml-mindmap-loader"
+  }
+}

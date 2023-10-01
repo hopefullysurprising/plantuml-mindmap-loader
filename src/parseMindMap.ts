@@ -21,7 +21,7 @@ export function parseMindMap(source: string): PlantUMLMindMapNode {
   }
 
   const firstLineInFile = sourceLines.shift();
-  if (!firstLineInFile || !firstLineInFile.text.startsWith('@startmindmap')) {
+  if (!firstLineInFile?.text.startsWith('@startmindmap')) {
     throw new Error("PlantUML mind map should start with '@startmindmap'. Can't process");
   }
 
@@ -87,8 +87,10 @@ function getTreeStructureFromLines(
 
 function getNestingLevelByLine(line: string): number {
   const regex = /^(\*+)/;
-  const matches = line.match(regex);
-  return (matches && matches[1]) ? matches[1].length : 0;
+  // This can iterate over the RegExp but we need the first match only
+  const matches = regex.exec(line);
+  if (!matches) { return 0; }
+  return matches[0].length;
 }
 
 function findParentWithNestingLevel(
@@ -110,7 +112,7 @@ function convertParsedLineToMindMapNode(node: ParsedMindMapLine): PlantUMLMindMa
   // Taking all tags off the string and keep them together
   // (tags are like "#tag" and "#type:question" and so on")
   const regexForTags = /#[a-zA-Z0-9:]+/g;
-  const tags = lineText.match(regexForTags) || [];
+  const tags = lineText.match(regexForTags) ?? [];
   lineText = lineText.replace(regexForTags, '').trim();
 
   return {
