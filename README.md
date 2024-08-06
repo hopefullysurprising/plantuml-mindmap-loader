@@ -14,7 +14,7 @@ See OrgMode syntax in official [PlantUML documentation](https://plantuml.com/min
 
 It can process PlantUML diagrams like this:
 
-```
+```plantuml
 @startmindmap
 * Root
 ** Node 1
@@ -60,7 +60,7 @@ export function printTree() {
 
 When ran, it will produce:
 
-```
+```json
 {
   "id": 3,
   "label": "Root",
@@ -114,7 +114,7 @@ When ran, it will produce:
 
 The mind map parser supports tags. Tags are added to the diagram like this:
 
-```
+```plantuml
 @startmindmap
 * Root #tag1 #tag2
 ** Node 1 #tag3
@@ -123,7 +123,7 @@ The mind map parser supports tags. Tags are added to the diagram like this:
 
 These tags will be present in `tags` property of the respective nodes:
 
-```
+```json
 {
   "id": 3,
   "label": "Root",
